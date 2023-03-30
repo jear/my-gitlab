@@ -1,0 +1,22 @@
+gitlab:
+  gitaly:
+    persistence:
+      storageClass: rook-ceph-block
+      size: 20Gi
+postgresql:
+  persistence:
+    storageClass: rook-ceph-block
+    size: 8Gi
+minio:
+  persistence:
+    storageClass: rook-ceph-block
+    size: 10Gi
+prometheus:
+  persistence:
+    storageClass: rook-ceph-block
+    size: 10Gi
+redis:
+  master:
+    persistence:
+      storageClass: rook-ceph-block
+      size: 5Gi
