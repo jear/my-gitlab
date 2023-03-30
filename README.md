@@ -1,7 +1,7 @@
 # my-gitlab
 ```
 helm upgrade --install my-gitlab gitlab/gitlab \
- -n my-gitlab –create-namespace \
+ -n my-gitlab --create-namespace \
  --timeout 600s  \
  --set global.hosts.domain=gitlab.datasvc01.lysdemolab.fr  \
  --set certmanager-issuer.email=jerome.armand@hpe.com \
