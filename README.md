@@ -3,7 +3,7 @@
 helm upgrade --install my-gitlab gitlab/gitlab \
  -n my-gitlab --create-namespace \
  --timeout 600s  \
- --set global.hosts.domain=83-206-89-107.nip.io  \
+ --set global.hosts.domain=datasvc01.lysdemolab.fr  \
  --set certmanager-issuer.email=jear@lysdemolab.fr \
  --set global.edition=ce  \
  --set global.initialRootPassword.secret=gitlab-initial-root-password \
