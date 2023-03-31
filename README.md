@@ -5,6 +5,9 @@ helm upgrade --install my-gitlab gitlab/gitlab \
  --timeout 600s  \
  --set global.hosts.domain=datasvc01.lysdemolab.fr  \
  --set certmanager-issuer.email=jear@lysdemolab.fr \
+ --set global.hosts.externalIP=10.69.41.93 \
+ --set global.ingress.configureCertmanager=false \
+ --set global.hosts.https=false \
  --set global.edition=ce  \
  --set global.initialRootPassword.secret=gitlab-initial-root-password \
  --set gitlab-runner.install=false \
