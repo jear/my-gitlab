@@ -40,8 +40,28 @@ kas:
     With a global value the chart can take care of these configurations without the need for other specific values.
 
 ```
+```
+(base) ubuntu@my-ubuntu:~/workspace/github/my-gitlab$ k get pods -n my-gitlab
+NAME                                            READY   STATUS      RESTARTS   AGE
+my-gitlab-gitaly-0                              1/1     Running     0          11m
+my-gitlab-gitlab-exporter-65dfcdb8d6-rtkts      1/1     Running     0          11m
+my-gitlab-gitlab-shell-577684dffc-9nplf         1/1     Running     0          11m
+my-gitlab-gitlab-shell-577684dffc-g25qr         1/1     Running     0          11m
+my-gitlab-kas-5575644954-jrkgd                  1/1     Running     0          11m
+my-gitlab-kas-5575644954-w2dsq                  1/1     Running     0          11m
+my-gitlab-migrations-1-sb7jr                    0/1     Completed   0          11m
+my-gitlab-minio-65bb67b6d4-kzdcd                1/1     Running     0          11m
+my-gitlab-minio-create-buckets-1-wtxsl          0/1     Completed   0          11m
+my-gitlab-postgresql-0                          2/2     Running     0          11m
+my-gitlab-redis-master-0                        2/2     Running     0          11m
+my-gitlab-sidekiq-all-in-1-v2-bd866cb6f-lm5tj   1/1     Running     0          11m
+my-gitlab-toolbox-85969688cd-zcc6g              1/1     Running     0          11m
+my-gitlab-webservice-default-69cb7447bc-m428m   2/2     Running     0          11m
+my-gitlab-webservice-default-69cb7447bc-z7bdf   2/2     Running     0          11m
 
+```
 
+# Examples
 ```
 helm install gitlab gitlab/gitlab --namespace gitlab --wait --version 2.6.0 \
   --set certmanager.install=false \
