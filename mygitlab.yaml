@@ -8,7 +8,7 @@ spec:
     values:
       global:
         hosts:
-          domain: lysdemolab.fr # use a real domain here
+          domain: ingress-gpu02.lysdemolab.fr # use a real domain here
         ingress:
           configureCertmanager: true
       certmanager-issuer:
