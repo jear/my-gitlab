@@ -39,7 +39,16 @@ gitlab/gitlab                   9.3.6           v18.3.6         GitLab is the mo
 
 https://gitlab.com/gitlab-org/cloud-native/gitlab-operator/-/blob/master/deploy/chart/values.yaml
 
-helm install gitlab-operator gitlab/gitlab-operator   --create-namespace   --namespace gitlab-system
+https://docs.gitlab.com/charts/installation/tls/#option-2-use-your-own-wildcard-certificate
+
+kubectl create secret tls <tls-secret-name> --cert=<path/to-full-chain.crt> --key=<path/to.key>
+helm upgrade --install install gitlab gitlab/gitlab \
+  --set installCertmanager=false \
+  --set global.ingress.configureCertmanager=false \
+  --set global.ingress.tls.secretName=<tls-secret-name>
+
+
+helm upgrade --install install gitlab-operator gitlab/gitlab-operator  --namespace gitlab-system  --create-namespace
 W1114 10:38:35.678159   46055 warnings.go:70] spec.privateKey.rotationPolicy: In cert-manager >= v1.18.0, the default value changed from `Never` to `Always`.
 NAME: gitlab-operator
 LAST DEPLOYED: Fri Nov 14 10:38:33 2025
