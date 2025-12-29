@@ -48,7 +48,7 @@ helm upgrade --install install gitlab gitlab/gitlab \
   --set global.ingress.tls.secretName=<tls-secret-name>
 
 
-helm upgrade --install install gitlab-operator gitlab/gitlab-operator  --namespace gitlab-system  --create-namespace
+helm upgrade --install gitlab-operator gitlab/gitlab-operator  --namespace gitlab-system  --create-namespace
 W1114 10:38:35.678159   46055 warnings.go:70] spec.privateKey.rotationPolicy: In cert-manager >= v1.18.0, the default value changed from `Never` to `Always`.
 NAME: gitlab-operator
 LAST DEPLOYED: Fri Nov 14 10:38:33 2025
